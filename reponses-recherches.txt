@@ -1,0 +1,23 @@
+1- etapes de creation
+   ->installer node js
+   ->créer le projet après avoir lancé le terminal avec la commande npm create vite@latest 001(nom du projet)
+   ->faire les choix:
+     *select a framework: react
+     *select a variant: js
+     *select a linter: ESLint
+à la fin on a un lien local.
+
+2-rôle des dossiers et certains fichiers types indispensables au projet
+   ->Dossiers
+    **src: indispensable. C'est là que vit le code
+    **main.jsx (point d'entrée), `App.jsx`, les composants, styles, images.
+    **public: fichiers statiques servis tels quels (favicon, images qu'on référence par URL directe). Pas strictement obligatoire, mais utile.
+    **node_modules: toutes les dépendances installées. Indispensable pour lancer le projet, mais **jamais à toucher ni à partager** : elle se régénère avec `npm install`. Elle est déjà exclue par `.gitignore`.
+
+   ->Fichiers indispensables
+    **package.json: liste des dépendances et des scripts (`npm run dev`, `npm run build`). Sans lui, pas de projet.
+    **index.html: la page HTML unique. Elle contient `<div id="root">` et charge `src/main.jsx`. Avec Vite, il est à la racine, pas dans `public/`.
+    **vite.config.js: configuration de Vite (plugin React, port, alias…).
+    **package-lock.json: verrouille les versions exactes des dépendances (à garder dans Git).
+    **.gitignore: indique à Git ce qu'il ne doit pas suivre (`node_modules`, etc.).
+    **eslint.config.js: règles de qualité de code.
